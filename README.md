@@ -2,5 +2,5 @@
 
 Full stack project
 
-Frontend - Aakash
+Frontend - Aakash,
 Backend - Thinley
