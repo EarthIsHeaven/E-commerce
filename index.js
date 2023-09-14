@@ -26,6 +26,8 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use(express.static("public"));
+
 mongoose.connect('mongodb://0.0.0.0:27017/ecommerceUser');
 
 const userSchema = new mongoose.Schema({
@@ -43,9 +45,21 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 app.get("/", function (req, res) {
-    res.send("Home page");
-    // res.render("home");
+    // res.send("Home page");
+    res.render("home");
 });
+
+app.get("/cart", function (req, res) {
+    // res.send("Home page");
+    res.render("myCart");
+});
+
+app.get("/detail", function (req, res) {
+    // res.send("Home page");
+    res.render("detail");
+});
+
+
 
 app.get("/login", function (req, res) {
     res.send("login page");
